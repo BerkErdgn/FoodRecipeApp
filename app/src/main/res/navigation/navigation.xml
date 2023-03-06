@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/emblemFragment">
+
+    <fragment
+        android:id="@+id/emblemFragment"
+        android:name="com.berke.foodrecipeapp.view.EmblemFragment"
+        android:label="fragment_emblem"
+        tools:layout="@layout/fragment_emblem" >
+        <action
+            android:id="@+id/action_emblemFragment_to_splashScreenFragment"
+            app:destination="@id/splashScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.berke.foodrecipeapp.view.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_allFoodFragment"
+            app:destination="@id/allFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allFoodFragment"
+        android:name="com.berke.foodrecipeapp.view.AllFoodFragment"
+        android:label="fragment_all_food"
+        tools:layout="@layout/fragment_all_food" >
+        <action
+            android:id="@+id/action_allFoodFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.berke.foodrecipeapp.view.RecipeFragment"
+        android:label="fragment_recipe"
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_recipeFragment_to_allFoodFragment"
+            app:destination="@id/allFoodFragment" />
+        <argument
+            android:name="idMeal"
+            app:argType="integer" />
+    </fragment>
+</navigation>
